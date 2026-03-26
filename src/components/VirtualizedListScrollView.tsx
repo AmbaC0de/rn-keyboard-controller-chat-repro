@@ -13,6 +13,11 @@ const VirtualizedListScrollView = forwardRef<
   ScrollViewProps & KeyboardChatScrollViewProps
 >((props, ref) => {
   const { bottom } = useSafeAreaInsets();
+
+  // Android-only reproduction note:
+  // If the chat list is already scrolled to the bottom and the keyboard is opened,
+  // scrolling upward can get stuck (until the keyboard is dismissed).
+  // Using `inverted` on the surrounding `FlatList` restores the expected behavior.
   return (
     <KeyboardChatScrollView
       ref={ref}
