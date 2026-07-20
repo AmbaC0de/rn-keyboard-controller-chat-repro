@@ -6,7 +6,7 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 type Ref = React.ComponentRef<typeof KeyboardChatScrollView>;
 
-const BOTTOM_OFFSET = 20; // distance from safe area to input
+const BOTTOM_OFFSET = 30; // distance from safe area to input
 
 const VirtualizedListScrollView = forwardRef<
   Ref,
